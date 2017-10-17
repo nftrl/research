@@ -4,6 +4,7 @@ import sys
 
 
 def newdeck(suits=4, cards=13):
+    """Return unshuffled deck."""
     # cards = cards per suit
     alph = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
     deck = [(c,n) for c in alph[:suits] for n in range(1, cards+1)]
@@ -11,6 +12,7 @@ def newdeck(suits=4, cards=13):
 
 
 def printdeck(deck, stacks=1):
+    """Print deck in a nice way, return nothing."""
     decklength = len(deck)
     if stacks == 1:
         for n in range(decklength):
@@ -24,6 +26,7 @@ def printdeck(deck, stacks=1):
 
 
 def shuffle(deck):
+    """Shuffle deck 1 time and return shuffled deck."""
     decklength = len(deck)
 
     #split deck in to equal parts
@@ -39,6 +42,13 @@ def shuffle(deck):
 
 
 def find_period(deck, ceiling=1000):
+    """Find the period.
+    
+    Shuffle the deck until the period is found.
+    Shuffle a maximum of ceiling times.
+    
+    Return period if found, otherwise return 0.
+    """
     initial = deck
     for i in range(ceiling):
         deck = shuffle(deck)
