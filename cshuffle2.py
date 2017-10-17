@@ -53,9 +53,11 @@ def find_period(deck, ceiling=1000):
 
 def printhelp():
     print('Usage: cshuffle2.py s_min s_max n_min n_max ceiling')
+    print('Output: [s, n, s*n, periode]')
     print()
     print('s er antal kulører, n er antal kort i hver kulør, ceiling er max iterations')
     print('i find_period(). All args must be integers.')
+    print()
 
 
 def main(s_min, s_max, n_min, n_max, ceiling):
