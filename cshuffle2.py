@@ -49,11 +49,15 @@ def find_period(deck, ceiling=1000):
     
 
 if __name__ == '__main__':
-    for s in range(10): #  s er antal kulører
-        for n in range(40): # n er antal kort i hver kulør
+    s_max = 10 # s er antal kulører
+    n_max = 40 # n er antal kort i hver kulør
+    ceiling = 1000
+
+    for s in range(1, s_max+1): # +1 fordi range er ekskl.
+        for n in range(1, n_max+1): # +1 fordi range er ekskl.
             if (s*n) % 2 != 0: # Vi gider ikke ulige produkter
                 continue
 
             d = newdeck(s, n)
-            p = find_period(d)
+            p = find_period(d, ceiling)
             print('[%i, %i, %i, %i]' % (s, n, (s * n), p))
