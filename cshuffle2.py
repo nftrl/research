@@ -78,7 +78,6 @@ if __name__ == '__main__':
     args = sys.argv[1:] # read arguments
     if not args or args[0] == '--help' or len(args) != 5:
         printhelp()
-        pass
     else:
         try:
             s_min = int(args[0]) # s er antal kulører
